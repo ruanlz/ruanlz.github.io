@@ -21,18 +21,18 @@
     
     
     <meta name="keywords" content="算法排序,基础知识">
-    <meta name="description" content="选择排序也是一种简单直观的排序算法。它的工作原理很容易理解：初始时在序列中找到最小（大）元素，放到序列的起始位置作为已排序序列；然后，再从剩余未排序元素中继续寻找最小（大）元素，放到已排序序列的末尾。以此类推，直到所有元素均排序完毕。注意选择排序与冒泡排序的区别：冒泡排序通过依次交换相邻两个顺序不合法的元素位置，从而将当前最小（大）元素放到合适的位置；而选择排序每遍历一次都记住了当前最小（大）元素">
+    <meta name="description" content="直接选择排序原理初始时在序列中找到最小（大）元素，放到序列的起始位置作为已排序序列；然后，再从剩余未排序元素中继续寻找最小（大）元素，放到已排序序列的末尾。以此类推，直到所有元素均排序完毕。 选择排序代码实现public void selectSort(int[] arr){     for(int i = 0;i &amp;lt; arr.length; i++){         int mix =">
 <meta name="keywords" content="算法排序,基础知识">
 <meta property="og:type" content="article">
 <meta property="og:title" content="选择排序">
 <meta property="og:url" content="http://ruanlz.github.io/2018/04/16/选择排序/index.html">
 <meta property="og:site_name" content="ruanlz&#39;s Blog">
-<meta property="og:description" content="选择排序也是一种简单直观的排序算法。它的工作原理很容易理解：初始时在序列中找到最小（大）元素，放到序列的起始位置作为已排序序列；然后，再从剩余未排序元素中继续寻找最小（大）元素，放到已排序序列的末尾。以此类推，直到所有元素均排序完毕。注意选择排序与冒泡排序的区别：冒泡排序通过依次交换相邻两个顺序不合法的元素位置，从而将当前最小（大）元素放到合适的位置；而选择排序每遍历一次都记住了当前最小（大）元素">
+<meta property="og:description" content="直接选择排序原理初始时在序列中找到最小（大）元素，放到序列的起始位置作为已排序序列；然后，再从剩余未排序元素中继续寻找最小（大）元素，放到已排序序列的末尾。以此类推，直到所有元素均排序完毕。 选择排序代码实现public void selectSort(int[] arr){     for(int i = 0;i &amp;lt; arr.length; i++){         int mix =">
 <meta property="og:locale" content="ZH">
-<meta property="og:updated_time" content="2018-04-29T12:04:07.369Z">
+<meta property="og:updated_time" content="2018-05-01T10:19:17.913Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="选择排序">
-<meta name="twitter:description" content="选择排序也是一种简单直观的排序算法。它的工作原理很容易理解：初始时在序列中找到最小（大）元素，放到序列的起始位置作为已排序序列；然后，再从剩余未排序元素中继续寻找最小（大）元素，放到已排序序列的末尾。以此类推，直到所有元素均排序完毕。注意选择排序与冒泡排序的区别：冒泡排序通过依次交换相邻两个顺序不合法的元素位置，从而将当前最小（大）元素放到合适的位置；而选择排序每遍历一次都记住了当前最小（大）元素">
+<meta name="twitter:description" content="直接选择排序原理初始时在序列中找到最小（大）元素，放到序列的起始位置作为已排序序列；然后，再从剩余未排序元素中继续寻找最小（大）元素，放到已排序序列的末尾。以此类推，直到所有元素均排序完毕。 选择排序代码实现public void selectSort(int[] arr){     for(int i = 0;i &amp;lt; arr.length; i++){         int mix =">
     
         <link rel="alternate" type="application/atom+xml" title="ruanlz&#39;s Blog" href="/atom.xml">
     
@@ -60,7 +60,7 @@
         </a>
         <hgroup class="introduce">
           <h5 class="nickname">阮临政</h5>
-          <a href="mailto:634206017@qq.com" title="634206017@qq.com" class="mail">634206017@qq.com</a>
+          <a href="mailto:179795514@qq.com" title="179795514@qq.com" class="mail">179795514@qq.com</a>
         </hgroup>
       </div>
     </div>
@@ -96,16 +96,9 @@
             </li>
         
             <li class="waves-block waves-effect">
-              <a href="https://github.com/yscoder" target="_blank" >
+              <a href="https://github.com/ruanlz" target="_blank" >
                 <i class="icon icon-lg icon-github"></i>
                 Github
-              </a>
-            </li>
-        
-            <li class="waves-block waves-effect">
-              <a href="http://www.weibo.com/ysweb" target="_blank" >
-                <i class="icon icon-lg icon-weibo"></i>
-                Weibo
               </a>
             </li>
         
@@ -133,7 +126,7 @@
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
                 <i class="icon icon-lg icon-chevron-left"></i>
             </a>
-            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="検索">
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="搜尋">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
                 <i class="icon icon-lg icon-search"></i>
             </a>
@@ -171,6 +164,13 @@
 
 <div class="container body-wrap">
     
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#直接选择排序"><span class="post-toc-number">1.</span> <span class="post-toc-text">直接选择排序</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#原理"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">原理</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#选择排序代码实现"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">选择排序代码实现</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#堆排序"><span class="post-toc-number">2.</span> <span class="post-toc-text">堆排序</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#堆排序原理"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">堆排序原理</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#堆排序代码实现"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">堆排序代码实现</span></a></li></ol></li></ol>
+        </nav>
+    </aside>
+
 
 <article id="post-选择排序"
   class="post-article article-type-post fade" itemprop="blogPost">
@@ -193,11 +193,62 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <p>选择排序也是一种简单直观的排序算法。它的工作原理很容易理解：初始时在序列中找到最小（大）元素，放到序列的起始位置作为已排序序列；然后，再从剩余未排序元素中继续寻找最小（大）元素，放到已排序序列的末尾。以此类推，直到所有元素均排序完毕。<br>注意选择排序与冒泡排序的区别：冒泡排序通过依次交换相邻两个顺序不合法的元素位置，从而将当前最小（大）元素放到合适的位置；而选择排序每遍历一次都记住了当前最小（大）元素的位置，最后仅需一次交换操作即可将其放到合适的位置。<br>选择排序的代码如下：</p>
-<p>#include &lt;stdio.h&gt;<br>// 分类 ————– 内部比较排序<br>// 数据结构 ———- 数组<br>// 最差时间复杂度 —- O(n^2)<br>// 最优时间复杂度 —- O(n^2)<br>// 平均时间复杂度 —- O(n^2)<br>// 所需辅助空间 —— O(1)<br>// 稳定性 ———— 不稳定<br>void Swap(int A[], int i, int j)<br>{<br>    int temp = A[i];<br>    A[i] = A[j];<br>    A[j] = temp;<br>}<br>void SelectionSort(int A[], int n)<br>{<br>    for (int i = 0; i &lt; n - 1; i++)         // i为已排序序列的末尾<br>    {<br>        int min = i;<br>        for (int j = i + 1; j &lt; n; j++)     // 未排序序列<br>        {<br>            if (A[j] &lt; A[min])              // 找出未排序序列中的最小值<br>            {<br>                min = j;<br>            }<br>        }<br>        if (min != i)<br>        {<br>            Swap(A, min, i);    // 放到已排序序列的末尾，该操作很有可能把稳定性打乱，所以选择排序是不稳定的排序算法<br>        }<br>    }<br>}<br>int main()<br>{<br>    int A[] = { 8, 5, 2, 6, 9, 3, 1, 4, 0, 7 }; // 从小到大选择排序<br>    int n = sizeof(A) / sizeof(int);<br>    SelectionSort(A, n);<br>    printf(“选择排序结果：”);<br>    for (int i = 0; i &lt; n; i++)<br>    {<br>        printf(“%d “, A[i]);<br>    }<br>    printf(“\n”);<br>    return 0;<br>}</p>
-<p> 　　上述代码对序列{ 8, 5, 2, 6, 9, 3, 1, 4, 0, 7 }进行选择排序的实现过程如右图</p>
-<p>使用选择排序为一列数字进行排序的宏观过程：</p>
-<p>选择排序是不稳定的排序算法，不稳定发生在最小元素与A[i]交换的时刻。<br>比如序列：{ 5, 8, 5, 2, 9 }，一次选择的最小元素是2，然后把2和第一个5进行交换，从而改变了两个元素5的相对次序。</p>
+            <h2 id="直接选择排序"><a href="#直接选择排序" class="headerlink" title="直接选择排序"></a>直接选择排序</h2><h3 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h3><p>初始时在序列中找到最小（大）元素，放到序列的起始位置作为已排序序列；然后，再从剩余未排序元素中继续寻找最小（大）元素，放到已排序序列的末尾。以此类推，直到所有元素均排序完毕。</p>
+<h3 id="选择排序代码实现"><a href="#选择排序代码实现" class="headerlink" title="选择排序代码实现"></a>选择排序代码实现</h3><pre><code class="java"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">selectSort</span><span class="params">(<span class="keyword">int</span>[] arr)</span></span>{
+    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>;i &lt; arr.length; i++){
+        <span class="keyword">int</span> mix = i;   <span class="comment">//mix用来保存最小值索引</span>
+        <span class="keyword">for</span>(<span class="keyword">int</span> j = i+<span class="number">1</span>;j &lt; arr.length;j++) {
+            <span class="keyword">if</span>(arr[j] &lt; arr[mix]){
+                mix = j;<span class="comment">//依次比较i后面每一个值与arr[mix]大小，并始终把最小值索引赋值给mix</span>
+            }
+        }<span class="comment">//仅仅在比较完毕后mix与i不等时交换一次，其他时候仅仅记住最小数索引值</span>
+        <span class="keyword">if</span>(mix != i){
+            swap(arr,mix,i);
+        }
+    }
+}
+<span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">swap</span><span class="params">(<span class="keyword">int</span>[] a,<span class="keyword">int</span> i,<span class="keyword">int</span> j)</span></span>{
+    <span class="keyword">int</span> temp = arr[i];
+    arr[i] = arr[j];
+    arr[j] = temp;
+}
+</code></pre>
+<h2 id="堆排序"><a href="#堆排序" class="headerlink" title="堆排序"></a>堆排序</h2><h3 id="堆排序原理"><a href="#堆排序原理" class="headerlink" title="堆排序原理"></a>堆排序原理</h3><p><code>基本思想</code>将待排序序列构造成一个大顶堆，此时，整个序列的最大值就是堆顶的根节点。将其与末尾元素进行交换，此时末尾就为最大值。然后将剩余n-1个元素重新构造成一个堆，这样会得到n个元素的次小值。如此反复执行，便能得到一个有序序列了。<br>a.将无需序列构建成一个堆，根据升序降序需求选择大顶堆或小顶堆;<br>b.将堆顶元素与末尾元素交换，将最大元素”沉”到数组末端;<br>c.重新调整结构，使其满足堆定义，然后继续交换堆顶元素与当前末尾元素，反复执行调整+交换步骤，直到整个序列有序。</p>
+<h3 id="堆排序代码实现"><a href="#堆排序代码实现" class="headerlink" title="堆排序代码实现"></a>堆排序代码实现</h3><pre><code class="java"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">heapSort</span><span class="params">(<span class="keyword">int</span>[] arr)</span></span>{
+    <span class="comment">//建立大根堆，从右向左，从下到上</span>
+    <span class="keyword">for</span>(<span class="keyword">int</span> i = arr.length/<span class="number">2</span>-<span class="number">1</span>;i&gt;=<span class="number">0</span>;i--){
+        adjustHeap(arr,i,arr.length);
+    }
+    <span class="comment">//交换堆顶元素与末尾元素</span>
+
+    <span class="keyword">for</span>(<span class="keyword">int</span> j = arr.length-<span class="number">1</span>; j &gt; <span class="number">0</span>;j--){
+        swap(arr,<span class="number">0</span>,j);
+        adjustHeap(arr,<span class="number">0</span>,j); <span class="comment">//调整堆结构</span>
+        <span class="comment">//与第一次建立大根堆比较   length减少，反应的是数组长度减少，即堆顶的大元素至数组尾部后不参与堆的调整；而且父子节点的比较是从堆顶开始</span>
+    }
+}
+<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">adjustHeap</span><span class="params">(<span class="keyword">int</span>[] arr,<span class="keyword">int</span> i,<span class="keyword">int</span> length)</span></span>{
+    <span class="keyword">int</span> temp = arr[i];   <span class="comment">//提取额当前元素值（根结点）</span>
+    <span class="keyword">for</span>(<span class="keyword">int</span> k = <span class="number">2</span>*i+<span class="number">1</span>;k &lt; length;k = <span class="number">2</span>k+<span class="number">1</span>){<span class="comment">//与length比较，判断是否为叶子结点</span>
+        <span class="keyword">if</span>(k+<span class="number">1</span> &lt; length &amp;&amp; arr[k] &lt; arr[k+<span class="number">1</span>]){
+            k++;<span class="comment">//比较两个子节点的大小，较大的与根结点比较</span>
+        }
+        <span class="keyword">if</span>(arr[k] &gt; temp){
+            arr[i] = arr[k];<span class="comment">//将根节点赋大值，</span>
+            i = k;<span class="comment">//此时子节点不赋值，查看k=2k+1是否大于length，即此交换的子节点是否为叶子结点，如果还有子节点则循环到下一层比较，没有值的改变，则跳出当前循环；</span>
+        }<span class="keyword">else</span>{
+            <span class="keyword">break</span>;
+        }
+    }
+    arr[i] = temp;<span class="comment">//较大子节点位置上浮位置赋值之前提取的根结点值</span>
+}
+<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">swap</span><span class="params">(<span class="keyword">int</span>[] arr,<span class="keyword">int</span> a ,<span class="keyword">int</span> b)</span></span>{
+    <span class="keyword">int</span> temp = arr[a];
+    arr[a] = arr[b];
+    arr[b] = temp;
+}
+</code></pre>
+<p><code>堆排序是整体主要由构建初始堆+交换堆顶元素和末尾元素并重建堆两部分组成</code>。其中构建初始堆经推导复杂度为O(n)，在交换并重建堆的过程中，需交换n-1次，而重建堆的过程中，根据完全二叉树的性质，[log2(n-1),log2(n-2)…1]逐步递减，近似为nlogn。所以堆排序时间复杂度一般认为就是<code>O(nlogn)</code>级。</p>
 
         </div>
 
@@ -206,7 +257,7 @@
     <div class="content">
         
 <span class="post-time">
-    最終更新：<time datetime="2018-04-29T12:04:07.369Z" itemprop="dateUpdated">2018-04-29 20:04:07</time>
+    最後更新時間：<time datetime="2018-05-01T10:19:17.913Z" itemprop="dateUpdated">2018-05-01 18:19:17</time>
 </span><br>
 
 
@@ -290,18 +341,18 @@
 <nav class="post-nav flex-row flex-justify-between">
   
     <div class="waves-block waves-effect prev">
-      <a href="/2018/04/21/Nihao-blog/" id="post-prev" class="post-nav-link">
+      <a href="/2018/04/16/虚拟机安装CentOS教程/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">Nihao,blog</h4>
+        <h4 class="title">虚拟机安装CentOS教程</h4>
       </a>
     </div>
   
 
   
     <div class="waves-block waves-effect next">
-      <a href="/2018/04/16/虽yi/" id="post-next" class="post-nav-link">
+      <a href="/2018/04/15/Markdown语法入门/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">qqqqqqqqqqqggggggggggggqqqqqqqqqqqq</h4>
+        <h4 class="title">Markdown常用语法入门</h4>
       </a>
     </div>
   
@@ -376,7 +427,7 @@
             
                 <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
             
-            <span>このブログの内容物は<a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.ja">クリエイティブ・コモンズ 表示 - 非営利 - 継承 4.0 国際ライセンスの下に提供されています</a></span>
+            <span>本部落格係採用<a rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.zh_TW">創用 CC 姓名標示 4.0 國際 授權條款授權</a></span>
         </p>
     </div>
     <div class="bottom">

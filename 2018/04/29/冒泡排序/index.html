@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>冒泡排序 | ruanlz&#39;s Blog | 路漫漫其修远兮，吾将上下而求索</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="算法排序,基础知识">
+    <meta name="description" content="原理：比较两个相邻的元素，将值大的元素交换至右端。即在第一趟：首先比较第1个和第2个数，将小数放前，大数放后。然后比较第2个数和第3个数，将小数放前，大数放后，如此继续，直至比较最后两个数，将小数放前，大数放后。重复第一趟步骤，直至全部排序完成。 代码实现12345678910111213public static void  bubbleSort1(int[] arr)&amp;#123;">
+<meta name="keywords" content="算法排序,基础知识">
+<meta property="og:type" content="article">
+<meta property="og:title" content="冒泡排序">
+<meta property="og:url" content="http://ruanlz.github.io/2018/04/29/冒泡排序/index.html">
+<meta property="og:site_name" content="ruanlz&#39;s Blog">
+<meta property="og:description" content="原理：比较两个相邻的元素，将值大的元素交换至右端。即在第一趟：首先比较第1个和第2个数，将小数放前，大数放后。然后比较第2个数和第3个数，将小数放前，大数放后，如此继续，直至比较最后两个数，将小数放前，大数放后。重复第一趟步骤，直至全部排序完成。 代码实现12345678910111213public static void  bubbleSort1(int[] arr)&amp;#123;">
+<meta property="og:locale" content="ZH">
+<meta property="og:updated_time" content="2018-05-01T10:19:17.912Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="冒泡排序">
+<meta name="twitter:description" content="原理：比较两个相邻的元素，将值大的元素交换至右端。即在第一趟：首先比较第1个和第2个数，将小数放前，大数放后。然后比较第2个数和第3个数，将小数放前，大数放后，如此继续，直至比较最后两个数，将小数放前，大数放后。重复第一趟步骤，直至全部排序完成。 代码实现12345678910111213public static void  bubbleSort1(int[] arr)&amp;#123;">
+    
+        <link rel="alternate" type="application/atom+xml" title="ruanlz&#39;s Blog" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">阮临政</h5>
+          <a href="mailto:179795514@qq.com" title="179795514@qq.com" class="mail">179795514@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/ruanlz" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/custom"  >
+                <i class="icon icon-lg icon-link"></i>
+                测试
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">冒泡排序</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="搜尋">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">冒泡排序</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2018-04-29T12:15:55.273Z" itemprop="datePublished" class="page-time">
+  2018-04-29
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/基础知识/">基础知识</a><ul class="article-category-list-child"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/基础知识/算法排序/">算法排序</a></li></ul></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#原理："><span class="post-toc-number">1.</span> <span class="post-toc-text">原理：</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#代码实现"><span class="post-toc-number"></span> <span class="post-toc-text">代码实现</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#算法分析"><span class="post-toc-number">1.</span> <span class="post-toc-text">算法分析</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#优化"><span class="post-toc-number">2.</span> <span class="post-toc-text">优化</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#优化外层循环"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">优化外层循环</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#优化内层循环"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">优化内层循环</span></a></li></ol></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-冒泡排序"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">冒泡排序</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2018-04-29 20:15:55" datetime="2018-04-29T12:15:55.273Z"  itemprop="datePublished">2018-04-29</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/基础知识/">基础知识</a><ul class="article-category-list-child"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/基础知识/算法排序/">算法排序</a></li></ul></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h2 id="原理："><a href="#原理：" class="headerlink" title="原理："></a>原理：</h2><p><code>比较两个相邻的元素，将值大的元素交换至右端。</code><br>即在第一趟：首先比较第1个和第2个数，将小数放前，大数放后。然后比较第2个数和第3个数，将小数放前，大数放后，如此继续，直至比较最后两个数，将小数放前，大数放后。重复第一趟步骤，直至全部排序完成。</p>
+<h1 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span>  <span class="title">bubbleSort1</span><span class="params">(<span class="keyword">int</span>[] arr)</span></span>&#123;　　　				</span><br><span class="line">true<span class="keyword">int</span> i = <span class="number">0</span>, j = <span class="number">0</span>;</span><br><span class="line">true<span class="keyword">int</span> size=arr.length;			</span><br><span class="line">true<span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; size - <span class="number">1</span>; i++)&#123;<span class="comment">//一共要排序size-1次</span></span><br><span class="line">truetrue<span class="keyword">for</span> (j = <span class="number">0</span>; j &lt; size - <span class="number">1</span> - i; j++)&#123;<span class="comment">//选出该趟排序的最大值往后移动	</span></span><br><span class="line">truetruetrue<span class="keyword">if</span>(arr[j] &gt; arr[j+<span class="number">1</span>])&#123;</span><br><span class="line">truetruetruetrue<span class="keyword">int</span> tmp = arr[j];</span><br><span class="line">truetruetruetruearr[j] = arr[j + <span class="number">1</span>];</span><br><span class="line">truetruetruetruearr[j + <span class="number">1</span>] = tmp;</span><br><span class="line">truetruetrue&#125;</span><br><span class="line">truetrue&#125;</span><br><span class="line">true&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="算法分析"><a href="#算法分析" class="headerlink" title="算法分析"></a>算法分析</h2><p><code>时间复杂度</code></p>
+<pre><code>最优的情况也就是开始就已经排序好序了，那么就可以不用交换元素了，则时间花销为：[ n(n-1) ] /  2；所以最优的情况时间复杂度为：O( n^2 )；{注：使用冒泡排序优化代码最好的时间复杂度为O(n)}
+
+最差的情况也就是开始的时候元素是逆序的，那么每一次排序都要交换两个元素，则时间花销为：[ 3n(n-1) ] / 2；（其中比上面最优的情况所花的时间就是在于交换元素的三个步骤）；所以最差的情况下时间复杂度为：O( n^2 )；
+
+平均的时间复杂度为：O( n^2 )；
+</code></pre><p> <code>空间复杂度</code></p>
+<pre><code> 空间复杂度就是在交换元素时那个临时变量所占的内存空间；
+最优的空间复杂度就是开始元素顺序已经排好了，则空间复杂度为：0；
+最差的空间复杂度就是开始元素逆序排序了，则空间复杂度为：O(n)；
+平均的空间复杂度为：O(1)；
+</code></pre><p>（4）算法稳定性<br>    　冒泡排序是就地排序，且它是稳定的。</p>
+<h2 id="优化"><a href="#优化" class="headerlink" title="优化"></a>优化</h2><h3 id="优化外层循环"><a href="#优化外层循环" class="headerlink" title="优化外层循环"></a>优化外层循环</h3><pre><code>　`若在某一趟排序中未发现位置的交换，冒泡排序过程可在此趟排序后终止`。为此，在下面给出的算法中，引入一个标签flag，在每趟排序开始前，先将其置为0。若排序过程中发生了交换，则将其置为1。各趟排序结束时检查flag，若未曾发生过交换则终止算法，不再进行下一趟排序。  
+</code></pre><p><code>代码实现：</code><br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">bubbleSort2</span><span class="params">(<span class="keyword">int</span>[] arr)</span></span>&#123;        </span><br><span class="line">true<span class="keyword">int</span> i = <span class="number">0</span>, j = <span class="number">0</span>; </span><br><span class="line">true<span class="keyword">int</span> size = arr.length; 	  </span><br><span class="line">true<span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; size - <span class="number">1</span>; i++)&#123;  </span><br><span class="line">truetrue<span class="keyword">int</span> flag = <span class="number">0</span>;     </span><br><span class="line">truetrue<span class="keyword">for</span> (j = <span class="number">0</span>; j &lt; size - <span class="number">1</span> - i; j++)&#123;  </span><br><span class="line">truetruetrue<span class="keyword">if</span> (arr[j] &gt; arr[j + <span class="number">1</span>])&#123;  </span><br><span class="line">truetruetruetrue<span class="keyword">int</span> tmp = arr[j];  </span><br><span class="line">truetruetruetruearr[j] = arr[j + <span class="number">1</span>];  </span><br><span class="line">true       		arr[j + <span class="number">1</span>] = tmp;  </span><br><span class="line">true       		flag = <span class="number">1</span>;<span class="comment">//只要有发生了交换，flag就置为1  </span></span><br><span class="line">true    	&#125;  </span><br><span class="line">truetrue&#125;   </span><br><span class="line">         <span class="comment">//判断标志位是否为0，如果为0，说明后面的元素已经有序，就直接return  </span></span><br><span class="line">true    <span class="keyword">if</span> (flag == <span class="number">0</span>)&#123;  </span><br><span class="line">true       <span class="keyword">return</span>;  </span><br><span class="line">true    &#125;  </span><br><span class="line">   	&#125;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="优化内层循环"><a href="#优化内层循环" class="headerlink" title="优化内层循环"></a>优化内层循环</h3><p><code>记住最后一次交换发生位置lastExchange的冒泡排序</code>在每趟扫描中，记住最后一次交换发生的位置lastExchange，（该位置之后的相邻记录均已有序）。下一趟排序开始时，R[1..lastExchange-1]是无序区，R[lastExchange..n]是有序区。这样，一趟排序可能使当前无序区扩充多个记录，因此记住最后一次交换发生的位置lastExchange，从而减少排序的趟数。<br>具体算法：</p>
+<p><code>代码实现：</code><br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">bubbleSort3</span><span class="params">(<span class="keyword">int</span>[] arr)</span></span>&#123;  </span><br><span class="line">true<span class="keyword">int</span> i = <span class="number">0</span>, j = <span class="number">0</span>; </span><br><span class="line">  	<span class="keyword">int</span> k = arr.length - <span class="number">1</span>;</span><br><span class="line">true<span class="keyword">int</span> pos = <span class="number">0</span>;<span class="comment">//pos变量用来标记循环里最后一次交换的位置    </span></span><br><span class="line">     </span><br><span class="line"> 	<span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; arr.length - <span class="number">1</span>; i++)&#123;</span><br><span class="line"> 		<span class="keyword">int</span> flag = <span class="number">0</span>;  </span><br><span class="line">truetrue<span class="keyword">for</span> (j = <span class="number">0</span>; j &lt;k; j++)&#123;  <span class="comment">//选出该趟排序的最大值往后移动 </span></span><br><span class="line">  			<span class="keyword">if</span> (arr[j] &gt; arr[j + <span class="number">1</span>])&#123;  </span><br><span class="line">            	<span class="keyword">int</span> tmp = arr[j];  </span><br><span class="line">                arr[j] = arr[j + <span class="number">1</span>];  </span><br><span class="line">                arr[j + <span class="number">1</span>] = tmp;  </span><br><span class="line">                flag = <span class="number">1</span>;<span class="comment">//只要有发生了交换，flag就置为1  </span></span><br><span class="line">               	pos = j;<span class="comment">//循环里最后一次交换的位置 j赋给pos  </span></span><br><span class="line">            &#125;  </span><br><span class="line">         &#125;     </span><br><span class="line">         k = pos;  </span><br><span class="line">        <span class="comment">//判断标志位是否为0，如果为0，说明后面的元素已经有序，就直接return  </span></span><br><span class="line">        <span class="keyword">if</span> (flag == <span class="number">0</span>)  </span><br><span class="line">        &#123;  </span><br><span class="line">           <span class="keyword">return</span>;  </span><br><span class="line">        &#125;  </span><br><span class="line">    &#125;   </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    最後更新時間：<time datetime="2018-05-01T10:19:17.912Z" itemprop="dateUpdated">2018-05-01 18:19:17</time>
+</span><br>
+
+
+        
+        这里可以写作者留言，标签和 hexo 中所有变量及辅助函数等均可调用，示例：<a href="/2018/04/29/冒泡排序/" target="_blank" rel="external">http://ruanlz.github.io/2018/04/29/冒泡排序/</a>
+        
+    </div>
+    
+    <footer>
+        <a href="http://ruanlz.github.io">
+            <img src="/img/avatar.jpg" alt="阮临政">
+            阮临政
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/基础知识/">基础知识</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/算法排序/">算法排序</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://ruanlz.github.io/2018/04/29/冒泡排序/&title=《冒泡排序》 — ruanlz's Blog&pic=http://ruanlz.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://ruanlz.github.io/2018/04/29/冒泡排序/&title=《冒泡排序》 — ruanlz's Blog&source=阮临政的成长记录" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://ruanlz.github.io/2018/04/29/冒泡排序/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《冒泡排序》 — ruanlz's Blog&url=http://ruanlz.github.io/2018/04/29/冒泡排序/&via=http://ruanlz.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://ruanlz.github.io/2018/04/29/冒泡排序/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2018/04/29/使用Github和Hexo搭建博客/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">No title</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2018/04/29/快速排序/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">快速排序</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        谢谢大爷~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/img/wechat.jpg" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check"
+                data-wechat="/img/wechat.jpg" data-alipay="/img/alipay.jpg">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>本部落格係採用<a rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.zh_TW">創用 CC 姓名標示 4.0 國際 授權條款授權</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>阮临政 &copy; 2015 - 2018</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://ruanlz.github.io/2018/04/29/冒泡排序/&title=《冒泡排序》 — ruanlz's Blog&pic=http://ruanlz.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://ruanlz.github.io/2018/04/29/冒泡排序/&title=《冒泡排序》 — ruanlz's Blog&source=阮临政的成长记录" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://ruanlz.github.io/2018/04/29/冒泡排序/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《冒泡排序》 — ruanlz's Blog&url=http://ruanlz.github.io/2018/04/29/冒泡排序/&via=http://ruanlz.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://ruanlz.github.io/2018/04/29/冒泡排序/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://ruanlz.github.io/2018/04/29/冒泡排序/" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '死鬼去哪里了！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '(つェ⊂)咦!又好了!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>
