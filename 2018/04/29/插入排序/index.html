@@ -29,7 +29,7 @@
 <meta property="og:site_name" content="ruanlz&#39;s Blog">
 <meta property="og:description" content="直接插入排序算法基本思想是将一个记录插入到已经排好序的有序表中，从而得到一个新的、记录数增1的有序表。代码实现1234567891011121314public static void insertSort(int[] arr)&amp;#123;    for(int i=1;i&amp;lt;arr.length;i++)&amp;#123;         //从1开始表示：假设arr[0] 已经放好位置了,后面的">
 <meta property="og:locale" content="ZH">
-<meta property="og:updated_time" content="2018-05-01T13:07:24.703Z">
+<meta property="og:updated_time" content="2018-05-07T13:47:19.806Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="插入排序">
 <meta name="twitter:description" content="直接插入排序算法基本思想是将一个记录插入到已经排好序的有序表中，从而得到一个新的、记录数增1的有序表。代码实现1234567891011121314public static void insertSort(int[] arr)&amp;#123;    for(int i=1;i&amp;lt;arr.length;i++)&amp;#123;         //从1开始表示：假设arr[0] 已经放好位置了,后面的">
@@ -126,7 +126,7 @@
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
                 <i class="icon icon-lg icon-chevron-left"></i>
             </a>
-            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="検索">
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
                 <i class="icon icon-lg icon-search"></i>
             </a>
@@ -195,11 +195,23 @@
         <div class="post-content" id="post-content" itemprop="postContent">
             <h2 id="直接插入排序算法"><a href="#直接插入排序算法" class="headerlink" title="直接插入排序算法"></a>直接插入排序算法</h2><p><code>基本思想</code>是将一个记录插入到已经排好序的有序表中，从而得到一个新的、记录数增1的有序表。<br><code>代码实现</code><br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">insertSort</span><span class="params">(<span class="keyword">int</span>[] arr)</span></span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;arr.length;i++)&#123; </span><br><span class="line">        <span class="comment">//从1开始表示：假设arr[0] 已经放好位置了,后面的数字就是插入到它左边还是右边的问题。</span></span><br><span class="line">        <span class="keyword">if</span>(arr[i] &lt; arr[i-<span class="number">1</span>])&#123; <span class="comment">//发现A[i]比前面的有序数组的最后一个数小了</span></span><br><span class="line">            <span class="keyword">int</span> tmp = arr[i];<span class="comment">//缓存下A[i]</span></span><br><span class="line">            <span class="keyword">int</span> j;</span><br><span class="line">            <span class="keyword">for</span>(j=i-<span class="number">1</span>; j&gt;=<span class="number">0</span> &amp;&amp; arr[j] &gt; tmp; j--)&#123; </span><br><span class="line">                <span class="comment">//从后往前逐个排查哪个位置刚好适合A[i],最后一次j--可能会为负值，这是为了配合后面arr[j+1]</span></span><br><span class="line">                arr[j+<span class="number">1</span>] = arr[j];<span class="comment">//arr[i]前移，其他元素下表+1；</span></span><br><span class="line">            &#125;</span><br><span class="line">            arr[j+<span class="number">1</span>] = tmp;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p><code>复杂度分析</code></p>
-<p><code>最优情况</code>在本身有序，共比较了n-1次，没有移动的记录，时间复杂度为O(n)。<br><code>最坏情况</code>为逆序：比较了 n(n-1)/2次，而移动次数为(n+2)(n-2)/2次。<br>平均比较 移动 次数：n^2/4，故直接插入排序的时间复杂度为<strong>O(n^2)</strong>。</p>
-<h2 id="希尔排序算法"><a href="#希尔排序算法" class="headerlink" title="希尔排序算法"></a>希尔排序算法</h2><p>基本有序：小的关键字基本在前面，大的关键字基本在后面，不大不小的基本在中间。<br>跳跃分割策略：将相距某个“增量”的记录组成一个子序列，这样才能保证在子序列内分别进行直接插入排序后得到的结果是基本有序而不是局部有序。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">shellSort</span><span class="params">(<span class="keyword">int</span>[] arr)</span></span>&#123; <span class="comment">//增量gap，并逐步缩小增量</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> gap=arr.length/<span class="number">2</span>;gap&gt;<span class="number">0</span>;gap/=<span class="number">2</span>)&#123;<span class="comment">//从第gap个元素，逐个对其所在组进行直接插入排序操作</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=gap;i &lt; arr.length;i++)&#123;<span class="comment">//从g</span></span><br><span class="line">            <span class="keyword">int</span> j = i;</span><br><span class="line">            <span class="keyword">int</span> temp = arr[j];</span><br><span class="line">            <span class="keyword">if</span>(arr[j] &lt; arr[j-gap])&#123;</span><br><span class="line">                <span class="keyword">while</span>(j-gap&gt;=<span class="number">0</span> &amp;&amp; temp&lt; arr[j-gap])&#123;<span class="comment">//移动法</span></span><br><span class="line">                    arr[j] = arr[j-gap];</span><br><span class="line">                    j-=gap;</span><br><span class="line">                &#125;</span><br><span class="line">                arr[j] = temp;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>if()<br>希尔排序复杂度分析</p>
-<p>希尔排序的关键并不是随便分组后各自排序，而是将相隔某个增量的数组组成一个子序列，实现跳跃式的移动。<br>增量的选择实验证明当增量序列为delt[k]=2^(t-k+1)-1( 0&lt;=k&lt;=t&lt;=log2(n+1))时，效果较佳，但注意最后增量值必须等于1。<br>此时时间复杂度为O(n^1.5)<br>希尔排序因为是跳跃式记录，故不是一个稳定的排序算法。</p>
+<p><code>最优情况</code>在本身有序，共比较了n-1次，没有移动的记录，时间复杂度为O(n)。<br><code>最坏情况</code>为逆序：比较了 n(n-1)/2次，而移动次数为(n+2)(n-2)/2次。<br>移动次数：n^2/4，故直接插入排序的时间复杂度为<strong>O(n^2)</strong>。</p>
+<h2 id="希尔排序算法"><a href="#希尔排序算法" class="headerlink" title="希尔排序算法"></a>希尔排序算法</h2><p><code>基本思想</code>：将数据进行分组，然后对每一组数据进行排序，在每一组数据都有序之后，就可以对所有的分组利用插入排序进行最后一次排序。这样可以显著减少交换的次数，以达到加快排序速度的目的。<br><code>代码实现</code><br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">shellSort</span><span class="params">(<span class="keyword">int</span>[] arr)</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> j;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> gap = arr.length/<span class="number">2</span>;gap &gt; <span class="number">0</span>;gap/=<span class="number">2</span>)&#123;<span class="comment">//增量gap，并逐步缩小增量</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = gap;i &lt; arr.length;i++)&#123;<span class="comment">//从第gap个元素，逐个对其所在组进行直接插入排序操作</span></span><br><span class="line">            <span class="keyword">int</span> temp = arr[i];</span><br><span class="line">            <span class="keyword">for</span>(j=i;j &gt;= gap &amp;&amp; temp &lt; arr[j-gap];j-=gap)&#123;<span class="comment">//直接插入法</span></span><br><span class="line">                arr[j] = arr[j-gap];</span><br><span class="line">            &#125;</span><br><span class="line">            arr[j] = temp;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><code>希尔排序分析总结</code></p>
+<ol>
+<li><code>增量序列的选择。</code>Shell排序的执行时间依赖于增量序列。好的增量序列的共同特征如下：    <ul>
+<li>最后一个增量必须为1。</li>
+<li>应该尽量避免序列中的值(尤其是相邻的值)互为倍数的情况。<br>有人通过大量实验给出了目前最好的结果：当n较大时，比较和移动的次数大概在n^1.25到n^1.26之间。</li>
+</ul>
+</li>
+<li><code>Shell排序的时间性能优于直接插入排序。</code>希尔排序的时间性能优于直接排序的原因如下：  <ul>
+<li>当文件初态基本有序时，直接插入排序所需的比较和移动次数均较少。</li>
+<li>当n值较小时，n和n^2的差别也较小，即直接插入排序的最好时间复杂度O(n)和最坏时间复杂度O(n^2)差别不大。</li>
+<li>在希尔排序开始时增量较大，分组较多，每组记录数目少，故每组内直接插入排序较快，后来增量d(i)逐渐缩小，分组数逐渐减少，而各组的记录数目逐渐增多，但由于已经按d(i-1)做为距离拍过序，使文件较接近于有序状态，所以新的一趟排序过程也较快。因此，希尔排序在效率上较直接插入排序有较大的改进。</li>
+</ul>
+</li>
+<li>稳定性<br><code>希尔排序是不稳定的。</code></li>
+</ol>
 
         </div>
 
@@ -208,7 +220,7 @@
     <div class="content">
         
 <span class="post-time">
-    最終更新：<time datetime="2018-05-01T13:07:24.703Z" itemprop="dateUpdated">2018-05-01 21:07:24</time>
+    Last updated: <time datetime="2018-05-07T13:47:19.806Z" itemprop="dateUpdated">2018-05-07 21:47:19</time>
 </span><br>
 
 
@@ -378,7 +390,7 @@
             
                 <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
             
-            <span>このブログの内容物は<a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.ja">クリエイティブ・コモンズ 表示 - 非営利 - 継承 4.0 国際ライセンスの下に提供されています</a></span>
+            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
         </p>
     </div>
     <div class="bottom">
